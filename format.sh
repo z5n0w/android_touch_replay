@@ -6,8 +6,8 @@ afile=${file}.a
 tfile=${file}.t
 bfile=${file}.b
 ofile=${file}.out
-sed "s:\[::g;s:\.::g;s:\]::g" $file > $afile
 
+sed "s:\[::g;s:\.::g;s:\]::g" $file > $afile
 
 if [ -f "$tfile" ];then
     rm $tfile
