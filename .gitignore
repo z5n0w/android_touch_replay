@@ -1,0 +1,5 @@
+# Formated events
+*.out
+
+# Output source code
+replay.c
