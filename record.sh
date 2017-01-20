@@ -11,4 +11,5 @@ echo "touch device is [ $touchdev ]"
 
 echo "--record start--"
 adb shell getevent -t $touchdev >$file
+trap "echo  '= recoder had stop ='" SIGINT
 echo "record end, output file is [ $file ]"
