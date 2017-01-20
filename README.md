@@ -1,5 +1,6 @@
 为了LL自动打歌写的一个小程序
-需要ROOT
+
+需要ROOT的Android机
 和
 一点点NDK使用知识
 
@@ -7,7 +8,7 @@ record.sh
 format.sh
 mix.sh
 
-arm-**-gcc replay.c -o replay
+###-gcc replay.c -o replay
 
 adb root
 adb shell mkdir /data/temp
