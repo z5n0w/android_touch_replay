@@ -12,7 +12,6 @@
 
 int main(int argc, char *argv[])
 {
-    int i;
     int fd;
     int ret;
     int version;
