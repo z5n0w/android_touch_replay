@@ -14,15 +14,16 @@ if [ -f "$tfile" ];then
 fi
 
 n=0
+
 cat $afile |while read line
 do
     if [ $n -eq 0 ];then 
         let time1=`echo $line |awk '{print $1}'`
+        let n=$n+1
     fi
     let time2=`echo $line |awk '{print $1}'`
     let time_t=$time2-$time1
     let time1=$time2
-    let n=$n+1
     echo $time_t >> $tfile 
 done
 

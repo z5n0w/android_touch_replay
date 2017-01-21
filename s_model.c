@@ -4,9 +4,11 @@
 
 #include <string.h> //memset()
 
-#include <linux/input.h> //struct event
+#include <linux/input.h> //struct event also include time.h 
 
 #include <errno.h> //errno()
+
+#include <unistd.h> //usleep()
 
 int main(int argc, char *argv[])
 {
@@ -48,7 +50,10 @@ int main(int argc, char *argv[])
     int a,b,c,d;
     while (!feof(eventfile)){
         fscanf(eventfile, "%d %d %d %d", &a, &b, &c, &d);
-        usleep(a);
+        if (a > 10000)
+            usleep(a - 10000);
+        else
+            usleep(a);
         memset(&event, 0, sizeof(event));
         event.type = b;
         event.code = c;
